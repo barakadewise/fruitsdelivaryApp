@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingBottom="7dp"
+    android:elevation="6dp"
+    android:background="@drawable/popular_background"
+    android:layout_margin="10dp"
+    >
+
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Title"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imagePopular"
+        android:layout_width="170dp"
+        android:layout_height="200dp"
+        android:layout_margin="10dp"
+        android:src="@drawable/apple"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textTitle"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textAmount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="00"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/imagePopular"
+        app:layout_constraintStart_toStartOf="@+id/imagePopular"
+        app:layout_constraintTop_toBottomOf="@+id/imagePopular"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="1dp"
+        android:text="Sh"
+        android:textColor="#F14D4D"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:layout_constraintEnd_toStartOf="@+id/textAmount"
+        app:layout_constraintStart_toStartOf="@+id/imagePopular"
+        app:layout_constraintTop_toTopOf="@+id/textAmount"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/addCartText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="+Add"
+        android:background="@drawable/add_cart_text"
+        android:layout_marginTop="5dp"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:padding="3dp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="@+id/imagePopular"
+        app:layout_constraintStart_toStartOf="@+id/imagePopular"
+        app:layout_constraintTop_toBottomOf="@+id/textAmount"
+        tools:ignore="MissingConstraints" />
+</androidx.constraintlayout.widget.ConstraintLayout>

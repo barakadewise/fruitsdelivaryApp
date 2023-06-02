@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/app_backgroundd"
+    android:orientation="vertical"
+    tools:context=".Activities.Login">
+
+   <ScrollView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+
+       <androidx.constraintlayout.widget.ConstraintLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent">
+
+           <TextView
+               android:id="@+id/textView"
+               android:layout_width="match_parent"
+               android:layout_height="370dp"
+               android:layout_margin="20dp"
+               android:gravity="bottom"
+               android:text="Login"
+               android:fontFamily="sans-serif"
+               android:textAlignment="center"
+               android:textColor="#10282f"
+               android:textSize="35sp"
+               android:textStyle="bold"
+               app:layout_constraintTop_toTopOf="parent"
+               tools:ignore="MissingConstraints,RtlCompat"
+               tools:layout_editor_absoluteX="20dp" />
+
+           <com.google.android.material.textfield.TextInputLayout
+               android:id="@+id/EmailLayout"
+               android:layout_width="match_parent"
+               android:layout_height="60dp"
+               app:boxStrokeColor="#F14D4D"
+              app:hintTextColor="#F14D4D"
+               android:background="@drawable/button_background"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintStart_toStartOf="parent"
+               android:layout_margin="20dp"
+               style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+               app:layout_constraintTop_toBottomOf="@+id/textView"
+               tools:ignore="MissingConstraints">
+
+               <com.google.android.material.textfield.TextInputEditText
+                   android:id="@+id/email"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:drawableStart="@drawable/baseline_email_24"
+                   android:hint="Email"
+                   android:textSize="13sp"
+                   android:autofillHints="emailAddress"
+                   android:inputType="textEmailAddress"
+                   android:drawablePadding="5dp"
+                   android:textStyle="bold"
+                   tools:ignore="MissingConstraints" />
+           </com.google.android.material.textfield.TextInputLayout>
+
+           <com.google.android.material.textfield.TextInputLayout
+               android:id="@+id/passwordLayout"
+               android:layout_width="match_parent"
+               android:layout_height="60dp"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintStart_toStartOf="parent"
+               android:layout_margin="20dp"
+               app:passwordToggleEnabled="true"
+               app:boxStrokeColor="#F14D4D"
+               app:hintTextColor="#F14D4D"
+               android:background="@drawable/button_background"
+               style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+               app:layout_constraintTop_toBottomOf="@+id/EmailLayout"
+               tools:ignore="MissingConstraints">
+
+               <com.google.android.material.textfield.TextInputEditText
+                   android:id="@+id/password"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:drawableStart="@drawable/baseline_lock_24"
+                   android:hint="Password"
+                   android:textSize="13sp"
+                   android:autofillHints="password"
+                   android:inputType="textPassword"
+                   android:drawablePadding="5dp"
+                   android:textStyle="bold"
+                   tools:ignore="MissingConstraints" />
+           </com.google.android.material.textfield.TextInputLayout>
+
+
+
+           <ProgressBar
+               android:id="@+id/progressBar"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               tools:ignore="MissingConstraints"
+               android:visibility="invisible"
+               tools:layout_editor_absoluteX="195dp"
+               tools:layout_editor_absoluteY="471dp" />
+
+           <com.google.android.material.button.MaterialButton
+               android:id="@+id/loginButton"
+               android:layout_width="match_parent"
+               android:layout_height="60dp"
+               android:layout_margin="15dp"
+               android:backgroundTint="#F14D4D"
+               android:fontFamily="sans-serif"
+               android:gravity="center"
+               android:text="login"
+               android:textAllCaps="false"
+               android:textSize="18sp"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@+id/passwordLayout" />
+
+           <com.google.android.material.textview.MaterialTextView
+               android:id="@+id/textGotoregister"
+               android:layout_width="match_parent"
+               android:layout_height="40dp"
+               android:layout_margin="10dp"
+               android:gravity="center"
+               android:textSize="18sp"
+               android:textStyle="bold"
+               android:layout_marginLeft="20dp"
+               android:layout_marginRight="20dp"
+               android:textColor="#FFA200"
+               android:fontFamily="sans-serif"
+               android:text="Dont have account?register"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@+id/loginButton"
+               tools:ignore="MissingConstraints" />
+
+       </androidx.constraintlayout.widget.ConstraintLayout>
+   </ScrollView>
+
+</LinearLayout>

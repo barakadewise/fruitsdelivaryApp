@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:background="@color/white"
+    android:elevation="8dp"
+    >
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/orange" />
+
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="Title"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+    <ImageView
+        android:id="@+id/minusBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:src="@drawable/baseline_remove_circle_24"
+        app:layout_constraintStart_toStartOf="@+id/textTitle"
+        app:layout_constraintTop_toBottomOf="@+id/textTitle"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:gravity="center"
+        android:text="1"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/minusBtn"
+        app:layout_constraintStart_toEndOf="@+id/minusBtn"
+        app:layout_constraintTop_toBottomOf="@+id/textTitle"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/plusBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:src="@drawable/baseline_add_circle_24"
+        app:layout_constraintStart_toEndOf="@+id/textNumber"
+        app:layout_constraintTop_toBottomOf="@+id/textTitle"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/feeItemtext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="sh"
+        android:textAlignment="textEnd"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#F14D4D"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textTitle"
+        app:layout_constraintStart_toEndOf="@+id/textTitle"
+        app:layout_constraintTop_toTopOf="@+id/textTitle"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/feeItemtextTotal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="sh"
+        android:textAlignment="textEnd"
+        android:textColor="#F14D4D"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="@+id/feeItemtext"
+        app:layout_constraintStart_toEndOf="@+id/plusBtn"
+        app:layout_constraintTop_toTopOf="@+id/plusBtn"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
