@@ -158,6 +158,33 @@
                         android:textStyle="bold" />
                 </LinearLayout>
 
+<!--                <FrameLayout-->
+<!--                    android:id="@+id/progressBarContainer"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="20dp"-->
+<!--                    android:background="@color/white"-->
+<!--                    android:elevation="6dp"-->
+<!--                    android:gravity="center">-->
+
+<!--                    <ProgressBar-->
+<!--                        android:id="@+id/progressBar"-->
+<!--                        android:layout_width="50dp"-->
+<!--                        android:layout_height="50dp"-->
+<!--                        android:indeterminate="true"-->
+<!--                        android:visibility="invisible" />-->
+
+<!--                    <ImageView-->
+<!--                        android:id="@+id/progressImage"-->
+<!--                        android:layout_width="50dp"-->
+<!--                        android:layout_height="50dp"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:src="@drawable/baseline_rotate_right_24"-->
+<!--                        android:rotation="0"-->
+<!--                        android:visibility="invisible"/>-->
+
+<!--                </FrameLayout>-->
+
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/checkOutButton"
                     android:layout_width="match_parent"
@@ -178,7 +205,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:visibility="visible"
                     android:text="Your cart is empty!"
                     android:textSize="20sp"
                     android:textStyle="bold" />

@@ -4,6 +4,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".Activities.PrivacyTerms">
+
+   <ScrollView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           android:layout_margin="5dp"
+           android:padding="16dp"
+           app:layout_constraintTop_toTopOf="parent">
+
+           <TextView
+               android:id="@+id/textPrivacyTerms"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginBottom="16dp"
+               android:gravity="center"
+               android:text="Privacy Terms"
+               android:textSize="18sp"
+               android:textStyle="bold" />
+
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:textStyle="bold"
+               android:text="@string/privacy_terms_content" />
+
+       </LinearLayout>
+   </ScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

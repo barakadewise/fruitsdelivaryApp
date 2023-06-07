@@ -2,4 +2,30 @@
     <string name="app_name">Fruits App</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="privacy_terms_content">
+    <![CDATA[
+    Thank you for using our Fruits Ordering App. This Privacy Policy describes how we collect, use, and handle your personal information when you use our app.
+
+    Information Collection:
+    We may collect personal information such as your name, email address, and delivery address when you register or place an order through our app. We ensure that your personal information is securely stored and used only for the purpose of processing your orders and providing you with a personalized experience.
+
+    Information Usage:
+    The personal information collected from you is used to process your orders, communicate with you regarding your orders, and improve our services. We may also send you promotional emails or notifications about special offers and updates, but you have the option to unsubscribe from such communications.
+
+    Information Sharing:
+    We do not share your personal information with third parties except for the purpose of processing your orders or when required by law.
+
+    Data Security:
+    We take appropriate security measures to protect your personal information from unauthorized access, alteration, or disclosure.
+
+    Changes to the Privacy Policy:
+    We may update our Privacy Policy from time to time. Any changes will be notified to you through our app or via email.
+
+    If you have any questions or concerns regarding our Privacy Policy, please contact us.
+
+    Last updated: [Insert date]
+    ]]>
+</string>
+
 </resources>

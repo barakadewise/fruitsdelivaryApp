@@ -79,7 +79,6 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.ViewHo
             }
         });
 
-
     }
 
     @Override

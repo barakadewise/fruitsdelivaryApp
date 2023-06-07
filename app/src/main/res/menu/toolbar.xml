@@ -1,4 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+       <item
+           android:id="@+id/help"
+           android:title="Help"
+           android:icon="@drawable/baseline_home_24">
+       </item>
+
+        <item
+            android:id="@+id/cart"
+            android:title="Contact"
+            android:icon="@drawable/baseline_shopping_cart_24">
+        </item>
+    <item
+        android:id="@+id/privacy"
+        android:title="Privacy"
+        android:icon="@drawable/baseline_shopping_cart_24">
+    </item>
+
+
+
+
 
 </menu>

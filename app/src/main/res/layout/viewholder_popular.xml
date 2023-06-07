@@ -26,10 +26,10 @@
 
     <ImageView
         android:id="@+id/imagePopular"
-        android:layout_width="170dp"
+        android:layout_width="180dp"
         android:layout_height="200dp"
         android:layout_margin="10dp"
-        android:src="@drawable/apple"
+        android:src="@drawable/pineapples"
         android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

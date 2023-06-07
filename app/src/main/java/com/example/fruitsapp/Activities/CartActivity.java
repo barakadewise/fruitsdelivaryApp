@@ -4,11 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.animation.ObjectAnimator;
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.LinearInterpolator;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.fruitsapp.Adapter.CartListAdapter;
 import com.example.fruitsapp.Helper.ManagementCart;
@@ -45,7 +51,7 @@ public class CartActivity extends AppCompatActivity {
         totalFee=findViewById(R.id.totalFee);
         scrollView=findViewById(R.id.scrollViewCrt);
         emptyText=findViewById(R.id.emptyText);
-
+        checkOutButton=findViewById(R.id.checkOutButton);
 
 
     }
@@ -71,20 +77,51 @@ public class CartActivity extends AppCompatActivity {
         }
 
     }
+
     @SuppressLint("SetTextI18n")
     public void calculate(){
-        double percentageTax =0.18;
-        double delivaryFee =1000.0;
+        //declared costs and tax inclusive
 
-        double tax = Math.round(managementCart.getTotalFee()*percentageTax);
-        double total=Math.round(managementCart.getTotalFee());
+        double tax = Math.round(managementCart.getTotalFee()*0.16);
+        double delivary =Math.round(managementCart.getTotalFee()*0.02);
         double itemTotal =Math.round(managementCart.getTotalFee());
+        double total=Math.round(managementCart.getTotalFee())+delivary+tax;
 
 
+        //set the values to cart to allow user to view costs:
         totalFeeText.setText("Sh"+itemTotal+"/=");
         taxfeeText.setText("Sh"+tax+"/=");
         totalFee.setText("Sh"+total+"/=");
-//        delivaryFeeText.setText("Sh"+delivaryFee+"/=");
+        delivaryFeeText.setText("Sh"+delivary+"/=");
+
+
+        //check if the total amount for payment
+        checkOutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(itemTotal==0){
+                    Toast.makeText(CartActivity.this, "No purchased cart,add cart to proceed!", Toast.LENGTH_SHORT).show();
+                }
+                else {
+//                    ProgressBar progressBar = findViewById(R.id.progressBar);
+//                    ImageView progressImage = findViewById(R.id.progressImage);
+//
+//                    // Set the visibility of progress bar and image to VISIBLE
+//                    progressBar.setVisibility(View.VISIBLE);
+//                    progressImage.setVisibility(View.VISIBLE);
+//
+//                   // Rotate the image
+//                    ObjectAnimator rotation = ObjectAnimator.ofFloat(progressImage, "rotation", 0f, 360f);
+//                    rotation.setDuration(4000);
+//                    rotation.setRepeatCount(ObjectAnimator.INFINITE);
+//                    rotation.setInterpolator(new LinearInterpolator());
+//                    rotation.start();
+                    Intent paymentIntent= new Intent(getApplicationContext(),PaymentActivity.class);
+                    startActivity(paymentIntent);
+                    finish();
+                }
+            }
+        });
 
     }
 }

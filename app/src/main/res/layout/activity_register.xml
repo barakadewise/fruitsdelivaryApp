@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/register_backgrounddd"
     tools:context=".Activities.Register">
 
     <ScrollView
@@ -15,7 +16,11 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:elevation="8dp"
+            android:background="@color/white"
+            >
 
             <TextView
                 android:id="@+id/textView"
@@ -26,7 +31,7 @@
                 android:fontFamily="sans-serif"
                 android:text="Register Now"
                 android:textAlignment="center"
-                android:textColor="#10282f"
+                android:textColor="#F14D4D"
                 android:textSize="30sp"
                 android:textStyle="bold"
                 app:layout_constraintTop_toTopOf="parent"
@@ -41,6 +46,10 @@
                 android:layout_marginBottom="10dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginStart="20dp"
+                app:boxStrokeColor="#009688"
+                app:hintTextColor="#F14D4D"
+                android:background="@drawable/button_background"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView">
@@ -66,6 +75,10 @@
                 android:layout_marginBottom="10dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginStart="20dp"
+                app:boxStrokeColor="#009688"
+                app:hintTextColor="#F14D4D"
+                android:background="@drawable/button_background"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/nameLayout">
@@ -79,7 +92,6 @@
                     android:textSize="13sp"
                     android:inputType="textPersonName"
                     android:drawablePadding="5dp"
-
                     tools:ignore="MissingConstraints"/>
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -92,6 +104,10 @@
                 android:layout_marginBottom="10dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginStart="20dp"
+                app:boxStrokeColor="#009688"
+                app:hintTextColor="#F14D4D"
+                android:background="@drawable/button_background"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/EmailLayout">
@@ -117,6 +133,10 @@
                 android:layout_marginBottom="10dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginStart="20dp"
+                app:boxStrokeColor="#009688"
+                app:hintTextColor="#F14D4D"
+                android:background="@drawable/button_background"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/addressLayout">
@@ -141,6 +161,10 @@
                 android:layout_marginBottom="10dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginStart="20dp"
+                app:boxStrokeColor="#009688"
+                app:hintTextColor="#F14D4D"
+                android:background="@drawable/button_background"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/passwordLayout">
@@ -169,10 +193,11 @@
 
             <ProgressBar
                 android:id="@+id/progressBar"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
                 android:visibility="gone"
+                android:foregroundGravity="center"
                 tools:ignore="MissingConstraints"
                 tools:layout_editor_absoluteX="71dp"
                 tools:layout_editor_absoluteY="103dp" />
@@ -180,9 +205,9 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/Register"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="54dp"
                 android:layout_margin="10dp"
-                android:backgroundTint="#006BB3"
+                android:backgroundTint="#009688"
                 android:fontFamily="sans-serif"
                 android:gravity="center"
                 android:text="Register"
@@ -199,8 +224,8 @@
                 android:layout_margin="5dp"
                 android:gravity="center"
                 android:textSize="13sp"
-                android:fontFamily="sans-serif"
                 android:textStyle="bold"
+                android:textColor="#F14D4D"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:text="Already have account?login"

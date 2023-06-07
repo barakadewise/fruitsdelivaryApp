@@ -1,9 +1,11 @@
 package com.example.fruitsapp.Activities;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,8 +14,13 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.fruitsapp.NetworkCheck.Networkcheck;
 import com.example.fruitsapp.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class Login extends AppCompatActivity {
     private Button loginButton;
@@ -29,6 +36,10 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        //networkcheck
+        Networkcheck networkcheck= Networkcheck.getInstance(this);
+
 
         //find by their id
         loginButton =findViewById(R.id.loginButton);
@@ -52,28 +63,28 @@ public class Login extends AppCompatActivity {
                     Toast.makeText(Login.this, "Username and password required!", Toast.LENGTH_SHORT).show();
 
                 }else {
-                    Intent mainActivityIntent = new Intent(Login.this,MainActivity.class);
-                    startActivity(mainActivityIntent); //BELOW IS TE FIREBASE CODE FOR LOGIN USER
-//                    mAuth = FirebaseAuth.getInstance();
-//                    mAuth.signInWithEmailAndPassword(user_email, user_password)
-//                            .addOnCompleteListener(Login.this, new OnCompleteListener<AuthResult>() {
-//                                @Override
-//                                public void onComplete(@NonNull Task<AuthResult> task) {
-//                                    if (task.isSuccessful()) {
-//                                        // Sign in success, update UI with the signed-in user's information
-//                                        FirebaseUser user = mAuth.getCurrentUser();
-//                                        progressBar.setVisibility(View.GONE);
-//                                        Toast.makeText(Login.this, "Successfully logged in!", Toast.LENGTH_SHORT).show();
-//                                        Intent intent =new Intent(getApplicationContext(),MainActivity.class);
-//                                        startActivity(intent);
-//                                    } else {
-//                                        // If sign in fails, display a message to the user.
-//                                        email.setTextColor(Color.RED);
-//                                        password.setTextColor(Color.RED);
-//                                        Toast.makeText(Login.this, "Invalid username or password!..", Toast.LENGTH_SHORT).show();
-//                                    }
-//                                }
-//                            });
+//                    Intent mainActivityIntent = new Intent(Login.this,MainActivity.class);
+//                    startActivity(mainActivityIntent); //BELOW IS TE FIREBASE CODE FOR LOGIN USER
+                    mAuth = FirebaseAuth.getInstance();
+                    mAuth.signInWithEmailAndPassword(user_email, user_password)
+                            .addOnCompleteListener(Login.this, new OnCompleteListener<AuthResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    if (task.isSuccessful()) {
+                                        // Sign in success, update UI with the signed-in user's information
+                                        FirebaseUser user = mAuth.getCurrentUser();
+                                        progressBar.setVisibility(View.GONE);
+                                        Toast.makeText(Login.this, "Successfully logged in!", Toast.LENGTH_SHORT).show();
+                                        Intent intent =new Intent(getApplicationContext(),MainActivity.class);
+                                        startActivity(intent);
+                                    } else {
+                                        // If sign in fails, display a message to the user.
+                                        email.setTextColor(Color.RED);
+                                        password.setTextColor(Color.RED);
+                                        Toast.makeText(Login.this, "Invalid username or password!..", Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+                            });
 
                 }
             }

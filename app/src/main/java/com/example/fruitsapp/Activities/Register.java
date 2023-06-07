@@ -3,6 +3,7 @@ package com.example.fruitsapp.Activities;
 
 
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
@@ -18,7 +19,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.fruitsapp.R;
+import com.example.fruitsapp.User.User;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 
 public class Register extends AppCompatActivity {
@@ -69,44 +77,44 @@ public class Register extends AppCompatActivity {
                     Toast.makeText(Register.this, "Agree to our privacy terms and conditions!", Toast.LENGTH_SHORT).show();
 
                 } else {
-                    Intent mainCtivityintent =new Intent(Register.this,MainActivity.class);
-                    startActivity(mainCtivityintent); /// BELOW IS FIREBASE REFISTRAION CODE
+//                    Intent mainCtivityintent =new Intent(Register.this,MainActivity.class);
+//                    startActivity(mainCtivityintent); /// BELOW IS FIREBASE REFISTRAION CODE
 
                     /////BELOW IS THE FIREBASE REGISTRATION CODE///////
 
-//                    mAuth = FirebaseAuth.getInstance();
-//                    //create user using email and password
-//                    mAuth.createUserWithEmailAndPassword(user_email, user_password)
-//                            .addOnCompleteListener(com.example.fruitsapp.Activities.Register.this, new OnCompleteListener<AuthResult>() {
-//                                @Override
-//                                public void onComplete(@NonNull Task<AuthResult> task) {
-//                                    progressBar.setVisibility(View.GONE);
-//                                    if (task.isSuccessful()) {
-//                                            //registering the user
-//                                            FirebaseUser user = mAuth.getCurrentUser();
-//                                            DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
-//                                            User newUser = new User();
-//                                            newUser.setName(user_name);
-//                                            newUser.setAddress(user_address);
-//                                            assert user != null;
-//                                            mDatabase.child("users").child(user.getUid()).push().setValue(newUser);
-//                                            Toast.makeText(Register.this, "Successfully Registered", Toast.LENGTH_SHORT).show();
-//
-//                                            //if successfully move to login panel
-//                                        Intent loginIntent =new Intent(com.example.fruitsapp.Activities.Register.this,Login.class);
-//                                        startActivity(loginIntent);
-//                                        finish();
-//
-//
-//                                    } else {
-//
-//                                        Toast.makeText(Register.this, "Registration Failed!.",
-//                                                Toast.LENGTH_SHORT).show();
-//
-//                                    }
-//                                }
-//                            });
-//
+                    mAuth = FirebaseAuth.getInstance();
+                    //create user using email and password
+                    mAuth.createUserWithEmailAndPassword(user_email, user_password)
+                            .addOnCompleteListener(com.example.fruitsapp.Activities.Register.this, new OnCompleteListener<AuthResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    progressBar.setVisibility(View.GONE);
+                                    if (task.isSuccessful()) {
+                                            //registering the user
+                                            FirebaseUser user = mAuth.getCurrentUser();
+                                            DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
+                                            User newUser = new User();
+                                            newUser.setName(user_name);
+                                            newUser.setAddress(user_address);
+                                            assert user != null;
+                                            mDatabase.child("users").child(user.getUid()).push().setValue(newUser);
+                                            Toast.makeText(Register.this, "Successfully Registered", Toast.LENGTH_SHORT).show();
+
+                                            //if successfully move to login panel
+                                        Intent loginIntent =new Intent(com.example.fruitsapp.Activities.Register.this,Login.class);
+                                        startActivity(loginIntent);
+                                        finish();
+
+
+                                    } else {
+
+                                        Toast.makeText(Register.this, "Registration Failed!.",
+                                                Toast.LENGTH_SHORT).show();
+
+                                    }
+                                }
+                            });
+
                 }
 
             }
